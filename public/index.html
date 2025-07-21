@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Burç API - Astroloji Yorumları</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1><i class="fas fa-star"></i> Burç API</h1>
+        <p>Türkçe astroloji yorumları ve AI destekli analiz</p>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <!-- Burç Seçimi -->
+        <section class="zodiac-selection">
+          <h2>Burcunuzu Seçin</h2>
+          <div class="zodiac-grid">
+            <div class="zodiac-card" data-sign="koc">
+              <i class="fas fa-fire"></i>
+              <span>Koç</span>
+            </div>
+            <div class="zodiac-card" data-sign="boga">
+              <i class="fas fa-mountain"></i>
+              <span>Boğa</span>
+            </div>
+            <div class="zodiac-card" data-sign="ikizler">
+              <i class="fas fa-users"></i>
+              <span>İkizler</span>
+            </div>
+            <div class="zodiac-card" data-sign="yengec">
+              <i class="fas fa-shield-alt"></i>
+              <span>Yengeç</span>
+            </div>
+            <div class="zodiac-card" data-sign="aslan">
+              <i class="fas fa-crown"></i>
+              <span>Aslan</span>
+            </div>
+            <div class="zodiac-card" data-sign="basak">
+              <i class="fas fa-seedling"></i>
+              <span>Başak</span>
+            </div>
+            <div class="zodiac-card" data-sign="terazi">
+              <i class="fas fa-balance-scale"></i>
+              <span>Terazi</span>
+            </div>
+            <div class="zodiac-card" data-sign="akrep">
+              <i class="fas fa-bug"></i>
+              <span>Akrep</span>
+            </div>
+            <div class="zodiac-card" data-sign="yay">
+              <i class="fas fa-crosshairs"></i>
+              <span>Yay</span>
+            </div>
+            <div class="zodiac-card" data-sign="oglak">
+              <i class="fas fa-mountain"></i>
+              <span>Oğlak</span>
+            </div>
+            <div class="zodiac-card" data-sign="kova">
+              <i class="fas fa-tint"></i>
+              <span>Kova</span>
+            </div>
+            <div class="zodiac-card" data-sign="balik">
+              <i class="fas fa-fish"></i>
+              <span>Balık</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Seçenekler -->
+        <section
+          class="options-section"
+          id="optionsSection"
+          style="display: none"
+        >
+          <h2>Yorum Türünü Seçin</h2>
+
+          <!-- Zaman Bazlı Yorumlar -->
+          <div class="option-group">
+            <h3><i class="fas fa-clock"></i> Zaman Bazlı Yorumlar</h3>
+            <div class="button-group">
+              <button class="option-btn" data-type="time" data-value="gunluk">
+                <i class="fas fa-sun"></i> Günlük
+              </button>
+              <button class="option-btn" data-type="time" data-value="haftalik">
+                <i class="fas fa-calendar-week"></i> Haftalık
+              </button>
+              <button class="option-btn" data-type="time" data-value="aylik">
+                <i class="fas fa-calendar-alt"></i> Aylık
+              </button>
+              <button class="option-btn" data-type="time" data-value="yillik">
+                <i class="fas fa-calendar"></i> Yıllık
+              </button>
+            </div>
+          </div>
+
+          <!-- Kategori Bazlı Yorumlar -->
+          <div class="option-group">
+            <h3><i class="fas fa-tags"></i> Kategori Bazlı Yorumlar</h3>
+            <div class="button-group category-grid">
+              <button class="option-btn" data-type="category" data-value="ask">
+                <i class="fas fa-heart"></i> Aşk
+              </button>
+              <button
+                class="option-btn"
+                data-type="category"
+                data-value="kariyer"
+              >
+                <i class="fas fa-briefcase"></i> Kariyer
+              </button>
+              <button
+                class="option-btn"
+                data-type="category"
+                data-value="saglik"
+              >
+                <i class="fas fa-heartbeat"></i> Sağlık
+              </button>
+              <button class="option-btn" data-type="category" data-value="stil">
+                <i class="fas fa-tshirt"></i> Stil
+              </button>
+              <button
+                class="option-btn"
+                data-type="category"
+                data-value="olumlu-yonler"
+              >
+                <i class="fas fa-thumbs-up"></i> Olumlu Yönler
+              </button>
+              <button
+                class="option-btn"
+                data-type="category"
+                data-value="unluler"
+              >
+                <i class="fas fa-star"></i> Ünlüler
+              </button>
+            </div>
+          </div>
+
+          <!-- AI Yorumu -->
+          <div class="option-group">
+            <h3><i class="fas fa-robot"></i> AI Destekli Yorum</h3>
+            <div class="button-group">
+              <button
+                class="option-btn gemini-btn"
+                data-type="gemini"
+                data-value="gunluk"
+              >
+                <i class="fas fa-brain"></i> Gemini AI Günlük
+              </button>
+              <button
+                class="option-btn gemini-btn"
+                data-type="gemini"
+                data-value="haftalik"
+              >
+                <i class="fas fa-brain"></i> Gemini AI Haftalık
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sonuçlar -->
+        <section
+          class="results-section"
+          id="resultsSection"
+          style="display: none"
+        >
+          <div class="results-header">
+            <h2 id="resultsTitle">Burç Yorumu</h2>
+            <button class="back-btn" onclick="goBack()">
+              <i class="fas fa-arrow-left"></i> Geri Dön
+            </button>
+          </div>
+
+          <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Yorum yükleniyor...</p>
+          </div>
+
+          <div class="results-content" id="resultsContent"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Burç API. Tüm hakları saklıdır.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
